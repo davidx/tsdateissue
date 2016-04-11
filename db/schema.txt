@@ -1,0 +1,14 @@
+CREATE TABLE market_data (
+    market     varchar   not null,
+    ticker     varchar   not null,
+    time       timestamp not null,
+    open       double    not null,
+    high       double   not null,
+    low        double   not null,
+    close      double   not null,
+    vol        sint64   not null,
+PRIMARY KEY (
+     (market, ticker, quantum(time, 15, 'm')),
+     market, ticker, time
+   )
+)
